@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: backend-servicea-kube
+spec:
+  selector:
+    app: servicea-kube
+  ports:
+    - protocol: 'TCP'
+      port: 80 # outside world port on which this should be exposed
+      targetPort: 8081 # local machine's port
+  type: LoadBalancer
+

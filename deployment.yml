@@ -1,15 +1,18 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: second-kube-deply
+  name: servicea-kube-deply
 spec:
   replicas: 1
+  selector:
+    matchLabels:
+      app: servicea-kube
   template:
     metadata:
       labels:
-        app: second-kube-deply
+        app: servicea-kube
     spec:
       containers:
-        - name: second-node
-          image: manasadvr0628/kubernetes-first-java-demo
+        - name: servicea-node
+          image: manasadvr0628/servicea-kube:v3
 
