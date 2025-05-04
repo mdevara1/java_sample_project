@@ -1,0 +1,15 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: second-kube-deply
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: second-kube-deply
+    spec:
+      containers:
+        - name: second-node
+          image: manasadvr0628/kubernetes-first-java-demo
+
